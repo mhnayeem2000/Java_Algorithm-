@@ -1,0 +1,29 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+
+int main()
+{
+   int edge , node, n1, n2;
+   printf("Enter The number of Edge and Node respectively :");
+   scanf("%d%d",&edge,&node);
+
+   vector<int> vec[node];
+
+   printf("Enter two edges : ");
+   for(int i = 0 ; i < edge ; i++){
+    scanf("%d%d",&n1,&n2);
+
+    vec[n1].push_back(n2);
+    vec[n2].push_back(n1);
+   }
+    for(int j = 1 ; j < node; j++){
+       cout << "Vertex " << j << ":";
+       for(int i = 1 ; i < vec[j].size(); i++){
+        //printf(" %d ",vec[3][i]);
+         cout << " -> " << vec[j][i];
+       }
+    printf("\n");
+    }
+
+}
